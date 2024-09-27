@@ -33,12 +33,8 @@ export default {
    */
   normalizeTransaction(transaction, _booked) {
     //transactions "transactionId" starts with P must be ignored
-    if (
-      transaction.transactionId.startsWith(
-        'P',
-      )
-    ) {
-      return {Null};
+    if (transaction.transactionId.startsWith('P')) {
+      return null;
     }
     return {
       ...transaction,
